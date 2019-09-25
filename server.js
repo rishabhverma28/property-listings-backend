@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 require("dotenv").config();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.use(cors());
