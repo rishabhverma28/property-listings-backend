@@ -1,8 +1,8 @@
 const expressRouter = require("express").Router();
 const addListingModel = require("../models/addListing");
 
+// Route for adding to the "/" route
 expressRouter.route("/").get((req, res) => {
-  console.log("Callllllll");
   addListingModel
     .find()
     .then(data => res.json(data))

@@ -2,13 +2,14 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+// Converting to Number when required
 const AddListing = new Schema(
   {
-    streetNum: { type: String, required: true },
-    unitNum: { type: String },
+    streetNum: { type: Number, required: true },
+    unitNum: { type: Number },
     street: { type: String, required: true },
     suburbName: { type: String, required: true },
-    postcode: { type: String, required: true },
+    postcode: { type: Number, required: true },
     stateSelect: { type: String, required: true },
     streetType: { type: String },
     propertyType: { type: String },

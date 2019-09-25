@@ -1,8 +1,8 @@
 const expressRouter = require("express").Router();
 const addListingModel = require("../models/addListing");
 
+// Route for adding to the "findListing/" route
 expressRouter.route("/").post((req, res) => {
-  console.log("vbvbvbv", req.body);
   addListingModel
     .find({
       $text: {
