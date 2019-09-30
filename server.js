@@ -6,7 +6,8 @@ const app = express();
 require("dotenv").config();
 // Added to take into account the heroku port
 const port = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
+// const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = "mongodb://localhost:27017/property-listings";
 
 // Use CORS
 app.use(cors());
@@ -22,11 +23,13 @@ mongoose.connect(MONGO_URI, {
 const addListing = require("./routes/addListing");
 const homePage = require("./routes/homePage");
 const findListing = require("./routes/findListing");
+const updateListing = require("./routes/updateListing");
 
 // Use the routes when the the route is called
 app.use("/", homePage);
 app.use("/addListing", addListing);
 app.use("/findListing", findListing);
+app.use("/updateListing", updateListing);
 
 const connection = mongoose.connection;
 // Open the connection
